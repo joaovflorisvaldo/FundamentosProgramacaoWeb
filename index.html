@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Trabalho Fundamentos Programação Web - 2º Bimestre</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h1 class="main-title">Trabalho Fundamentos Programação Web</h1>
+        <div class="container">
+            <div class="f1">
+                <button id="mostrarPiloto">Clique aqui e veja o novo carro do Bortoleto</button>
+                <div class="piloto-box" id="pilotoBox">
+                    <p>🏁 Gabriel Bortoleto mostrando seu novo "carro" na pista! 🟢🚜</p>
+                    <video controls width="100%" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+                        <source src="bortoleto.mp4" type="video/mp4" />
+                        Seu navegador não suporta vídeo.
+                    </video>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h2>1. Encontre o Triângulo</h2>
+            <label for="ladoX">Lado X:</label>
+            <input type="number" id="ladoX" placeholder="Digite o valor de X">
+            <label for="ladoY">Lado Y:</label>
+            <input type="number" id="ladoY" placeholder="Digite o valor de Y">
+            <label for="ladoZ">Lado Z:</label>
+            <input type="number" id="ladoZ" placeholder="Digite o valor de Z">
+            <button onclick="verificarTriangulo()">Verificar Triângulo</button>
+            <div class="resultado" id="resultadoTriangulo"></div>
+        </div>
+        <div class="container">
+            <h2>2. Calculadora IMC</h2>
+            <label for="peso">Peso (kg):</label>
+            <input type="number" id="peso" placeholder="Ex: 70.5">
+            <label for="altura">Altura (m):</label>
+            <input type="number" id="altura" placeholder="Ex: 1.75">
+            <button onclick="calcularIMC()">Calcular IMC</button>
+            <div class="resultado" id="resultadoIMC"></div>
+        </div>
+        <div class="container">
+            <h2>3. Calculadora de Impostos</h2>
+            <label for="anoCarro">Ano de Fabricação do Carro:</label>
+            <input type="number" id="anoCarro" placeholder="Ex: 1995">
+            <label for="valorCarro">Valor de Tabela do Carro (R$):</label>
+            <input type="number" id="valorCarro" placeholder="Ex: 25000">
+            <button onclick="calcularImpostoCarro()">Calcular Imposto</button>
+            <div class="resultado" id="resultadoImpostoCarro"></div>
+        </div>
+        <div class="container">
+            <h2>4. Calculadora de Salário</h2>
+            <label for="salarioAtual">Salário Atual (R$):</label>
+            <input type="number" id="salarioAtual" placeholder="Ex: 3000">
+            <label for="cargo">Código do Cargo:</label>
+            <input type="text" id="cargo" placeholder="Ex: 101, 102, 103 ou outro">
+            <p style="font-size: 0.9em; color: #555;">
+               Códigos válidos:<br>
+               101: Gerente (10%)<br>
+               102: Engenheiro (20%)<br>
+               103: Técnico (30%)<br>
+               Outro código: Aumento de 40%
+            </p>
+            <button onclick="calcularAumentoSalario()">Calcular Novo Salário</button>
+            <div class="resultado" id="resultadoAumentoSalario"></div>
+        </div>
+        <div class="container">
+            <h2>5. Calculadora de Crédito Bancário</h2>
+            <label for="saldoMedio">Saldo Médio no Último Ano (R$):</label>
+            <input type="number" id="saldoMedio" placeholder="Ex: 500">
+            <button onclick="calcularCreditoEspecial()">Calcular Crédito</button>
+            <div class="resultado" id="resultadoCreditoEspecial"></div>
+        </div>
+        <div class="container">
+            <h2>6. Lanchonete</h2>
+            <label for="itemPedido">Item Pedido:</label>
+            <select id="itemPedido">
+                <option value="1">Cachorro Quente (R$11,00)</option>
+                <option value="2">Bauru (R$8,50)</option>
+                <option value="3">Misto Quente (R$8,00)</option>
+                <option value="4">Hamburger (R$9,00)</option>
+                <option value="5">Cheeseburger (R$10,00)</option>
+                <option value="6">Refrigerante (R$4,50)</option>
+            </select>
+            <label for="quantidadeItem">Quantidade:</label>
+            <input type="number" id="quantidadeItem" value="1" min="1">
+            <button onclick="calcularPedidoLanchonete()">Calcular Valor</button>
+            <div class="resultado" id="resultadoPedidoLanchonete"></div>
+        </div>
+        <div class="container">
+            <h2>7. Sistema de Vendas</h2>
+            <label for="precoEtiqueta">Preço Normal de Etiqueta (R$):</label>
+            <input type="number" id="precoEtiqueta" placeholder="Ex: 100">
+            <label for="condicaoPagamento">Condição de Pagamento:</label>
+            <select id="condicaoPagamento">
+                <option value="a">a) À vista em dinheiro ou cheque (10% de desconto)</option>
+                <option value="b">b) À vista no cartão de crédito (15% de desconto)</option>
+                <option value="c">c) Em duas vezes sem juros</option>
+                <option value="d">d) Em duas vezes com juros</option>
+            </select>
+            <button onclick="calcularValorProduto()">Calcular Valor a Pagar</button>
+            <div class="resultado" id="resultadoValorProduto"></div>
+        </div>
+        <div class="container">
+            <h2>8. Sistema de Pagamentos</h2>
+            <label for="nivelProfessor">Nível do Professor:</label>
+            <select id="nivelProfessor">
+                <option value="1">Nível 1 (R$12,00/hora-aula)</option>
+                <option value="2">Nível 2 (R$17,00/hora-aula)</option>
+                <option value="3">Nível 3 (R$25,00/hora-aula)</option>
+            </select>
+            <label for="horasAula">Quantidade de Horas/Aula na Semana:</label>
+            <input type="number" id="horasAula" placeholder="Ex: 20">
+            <button onclick="calcularSalarioProfessor()">Calcular Salário</button>
+            <div class="resultado" id="resultadoSalarioProfessor"></div>
+        </div>
+    </body>
+</html>
